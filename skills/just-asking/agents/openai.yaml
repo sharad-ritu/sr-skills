@@ -1,0 +1,5 @@
+interface:
+  display_name: "Just Asking"
+  short_description: "Concise chat answers without changing files"
+policy:
+  allow_implicit_invocation: true

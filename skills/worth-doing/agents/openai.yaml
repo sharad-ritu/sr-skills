@@ -1,0 +1,5 @@
+interface:
+  display_name: "Worth Doing"
+  short_description: "Filter reviews for changes worth making"
+policy:
+  allow_implicit_invocation: true

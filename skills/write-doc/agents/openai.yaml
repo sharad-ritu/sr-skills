@@ -1,0 +1,5 @@
+interface:
+  display_name: "Write Doc"
+  short_description: "Create clear Markdown or light-theme HTML documents"
+policy:
+  allow_implicit_invocation: false
