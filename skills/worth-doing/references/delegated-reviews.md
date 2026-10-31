@@ -30,8 +30,8 @@ Make the brief specific to the actual task.
 
 ## Assess and bound follow-up
 
-The receiving agent checks recommendations independently using the skill's criteria. Preserve finding IDs. Record acceptance, narrowing, or rejection with a short reason in the review exchange, without making the user read every rejected concern.
+The receiving agent checks recommendations independently using the skill's criteria. Preserve finding IDs. In a recheck brief, record acceptance, narrowing, or rejection with a short reason. Include this record in the report only when the user asks to audit decisions.
 
 Use the enclosing workflow's review budget. If it has none, allow an initial review and at most one focused recheck. Recheck changed behavior or consequential open findings, not the whole codebase. Declined suggestions and wording-only changes do not need another round.
 
-If disagreement remains, present the evidence and unresolved consequence briefly. A reviewer timeout, exhausted budget, or lack of response is not approval. Only new evidence within the user's scope justifies another round.
+If disagreement remains, present the evidence and unresolved consequence briefly. A reviewer timeout, exhausted budget, or lack of response is not approval. Another round requires new evidence within the user's scope and remaining review budget.

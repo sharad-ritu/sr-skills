@@ -54,7 +54,9 @@ Allow at most one focused recheck for substantive fixes. If review cannot run, r
 
 ## Finish and report
 
-Finish an authorized operation after addressing supported review findings.
+Finish any still-open authorized operation after addressing supported findings and completing checks and any focused recheck.
+
+For a completed rebase or cherry-pick sequence, commit supported review fixes in a follow-up commit. Rewrite earlier commits only when the user has authorized it.
 
 Read and apply the `unslop` skill to the report. If it is not in the available skills list, read `../unslop/SKILL.md` relative to this skill's directory. If neither exists, write in plain, direct language.
 

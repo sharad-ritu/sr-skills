@@ -17,7 +17,7 @@ Interpret the user's intent, not just the trigger words. A quoted example of the
 
 ## Use the relevant skills
 
-Read and apply the `unslop` skill before sending the answer. If it is not in the available skills list, read `../unslop/SKILL.md` relative to this skill's directory. If neither exists, say so briefly and use plain, direct language without installing anything.
+Read and apply the `unslop` skill before sending the answer. If it is not in the available skills list, read `../unslop/SKILL.md` relative to this skill's directory. If neither exists, use plain, direct language without installing anything.
 
 Use other available skills only when they help answer this question. Keep their work read-only and their output in chat, even if they normally create artifacts. A delegated agent does not inherit this skill, so state the read-only and chat-only limits in its brief.
 

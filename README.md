@@ -11,7 +11,9 @@ Reusable agent skills by Sharad for Claude Code, Codex, and other coding agents.
 | [guided-merge](skills/guided-merge/SKILL.md) | `/guided-merge` | Resolves mechanical conflicts, asks about behavior choices before editing, delegates a review, and lists remaining checks. |
 | [write-doc](skills/write-doc/SKILL.md) | `/write-doc` | Creates Markdown or light-theme HTML documents organized for their purpose, with necessary context, sources, and useful visuals. |
 
-The agent can select `just-asking` and `worth-doing` from ordinary language. `guided-merge` and `write-doc` run only when invoked by name:
+The agent can select `just-asking` and `worth-doing` from ordinary language. `guided-merge` and `write-doc` run only when invoked by name.
+
+You can invoke any skill by name. These examples show each agent's syntax:
 
 | Agent | Invoke |
 | --- | --- |

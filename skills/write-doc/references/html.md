@@ -2,7 +2,7 @@
 
 ## Package one portable document
 
-Produce one HTML file with inline CSS. Embed diagrams as SVG and included raster images as data URLs. Use system fonts and inline JavaScript only when an interaction needs it.
+Produce one HTML file with inline CSS. Embed diagrams as SVG and included raster images as data URLs. Use inline JavaScript only when an interaction needs it.
 
 Keep rendering independent of network requests, external libraries, fonts, and CDNs. External source links remain ordinary links.
 
@@ -10,7 +10,7 @@ Include the document language, UTF-8 charset, viewport metadata, and a meaningfu
 
 ## Design for reading
 
-Declare `color-scheme: light`. Use a white or pale neutral background, dark text, and a restrained accent chosen for the subject. Keep body text contrast at least 4.5:1. Give links a visible treatment beyond colour.
+Declare `color-scheme: light`. Use a white or pale neutral background, dark text, and a restrained accent chosen for the subject. Keep body text contrast at least 4.5:1. Give links a visible treatment beyond color.
 
 Use a readable system font stack. Set body text near 18px using rem units, with line height around 1.6. Give headings a clear hierarchy without making the opening resemble a promotional landing page.
 
@@ -22,7 +22,7 @@ Use callouts for information that changes interpretation or action, such as a de
 
 ## Make tables and visuals understandable
 
-Give tables clear headers and units. Use header cells with the appropriate scope. Align comparable numbers consistently, and express status in text as well as colour.
+Give tables clear headers and units. Use header cells with the appropriate scope. Align comparable numbers consistently, and express status in text as well as color.
 
 Give SVG diagrams a responsive `viewBox`, readable labels, and an accessible title and description. Explain their main point in nearby text. Provide underlying values in text or a table when readers need them to assess a chart.
 
@@ -30,7 +30,7 @@ Give SVG diagrams a responsive `viewBox`, readable labels, and an accessible tit
 
 Start with a static document. Add an interaction when it answers a concrete question, such as comparing assumptions, filtering a long issue list, or opening supporting detail.
 
-Prefer native controls such as `details`, labelled inputs, and buttons. Use keyboard access and visible focus. Keep essential conclusions, evidence, and actions readable with JavaScript disabled.
+Prefer native controls such as `details`, labeled inputs, and buttons. Use keyboard access and visible focus. Keep essential conclusions, evidence, and actions readable with JavaScript disabled.
 
 For calculations, show the inputs, units, assumptions, and method. Identify illustrative data. Keep the underlying information available when filters or disclosures change what is visible.
 
@@ -48,4 +48,4 @@ When a renderer is available, open the saved file and inspect a wide and narrow 
 
 Exercise each interaction by keyboard. Check essential content with JavaScript disabled and inspect print output.
 
-Correct observed problems before handback. If a renderer or check is unavailable, state which verification remains unperformed.
+Correct observed problems before the final response. If a renderer or check is unavailable, state which verification remains unperformed.
