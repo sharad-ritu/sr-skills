@@ -40,6 +40,8 @@ Run the project's relevant checks against the resolved result.
 
 Review a merge before committing it. For an authorized rebase or cherry-pick sequence, review the complete result once the sequence finishes. When stopping staged, state that the review covers only the resolved state reached so far.
 
+Delegate the review using the same provider, model, reasoning effort, and speed or service tier as the agent performing the merge, unless the user specifies different review settings. If the delegation tool cannot match or verify a setting, report that limitation rather than silently substituting.
+
 Delegate one read-only reviewer, with no further delegation. Pass:
 
 - The repository, original commits and base, and the resolved index or completed result.
