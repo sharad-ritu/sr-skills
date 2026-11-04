@@ -8,7 +8,7 @@ Reusable agent skills by Sharad for Claude Code, Codex, and other coding agents.
 | --- | --- | --- |
 | [just-asking](skills/just-asking/SKILL.md) | "just asking" | Answers concisely in chat without changing files. Puts material related considerations after the main answer. |
 | [worth-doing](skills/worth-doing/SKILL.md) | "worth doing" | Filters review findings and improvement suggestions by evidence, current benefit, cost, and scope. Works for reviewers and agents assessing their feedback. |
-| [guided-merge](skills/guided-merge/SKILL.md) | `/guided-merge` | Resolves mechanical conflicts, asks about behavior choices before editing, delegates a review, and lists remaining checks. |
+| [guided-merge](skills/guided-merge/SKILL.md) | `/guided-merge` | Checks and pushes conflict-free merges. Resolves conflicts with your input and a delegated review, then stops staged. Reports related PR status. |
 | [write-doc](skills/write-doc/SKILL.md) | `/write-doc` | Creates Markdown or light-theme HTML documents organized for their purpose, with necessary context, sources, and useful visuals. |
 
 The agent can select `just-asking` and `worth-doing` from ordinary language. `guided-merge` and `write-doc` run only when invoked by name.
@@ -55,19 +55,21 @@ Its decisions are `Do now`, `Follow up`, `Investigate`, and `Omit`. It filters o
 
 ### guided-merge
 
-Invoke it during a conflicted merge, rebase, or cherry-pick:
+Invoke it to merge branches or resolve an in-progress merge, rebase, or cherry-pick:
 
 ```text
-/guided-merge
+/guided-merge Merge feat/new into main.
 ```
 
 ```text
-/guided-merge Finish this rebase.
+/guided-merge Resolve the conflicts in this rebase.
 ```
 
-Mechanical resolutions proceed directly. Behavior choices reach you with project context, focused diffs, and a recommendation before any edits.
+A conflict-free merge runs relevant checks, creates a merge commit if needed, and pushes the target branch. It adds no co-author trailers and honors narrower instructions such as "do not push."
 
-By default it leaves the resolution staged after checks and a delegated review. An instruction to finish the operation authorizes committing or continuing. For a full rebase, the review covers the completed series. The final `After this merge` section lists specific remaining checks and follow-ups.
+If conflicts occur, mechanical resolutions proceed directly. Behavior choices reach you with project context, focused diffs, and a recommendation before dependent edits. After checks and a delegated review, the resolution stays staged and the operation remains unfinished. A subsequent explicit instruction is required to commit, continue, or push. Answering a resolution question does not authorize completion.
+
+It reports matching GitHub PR status and only closes PRs or deletes branches when you ask. The final `After this merge` section lists specific remaining checks and follow-ups.
 
 ### write-doc
 

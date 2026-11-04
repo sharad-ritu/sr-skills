@@ -1,5 +1,5 @@
 interface:
   display_name: "Guided Merge"
-  short_description: "Resolve conflicts with your decisions and a review"
+  short_description: "Merge branches, push clean merges, and guide conflict resolution"
 policy:
   allow_implicit_invocation: false
