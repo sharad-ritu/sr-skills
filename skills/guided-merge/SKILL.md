@@ -22,13 +22,17 @@ When GitHub access is available, look for an open PR matching the source and tar
 
 Honor narrower user instructions such as "do not commit" or "do not push."
 
+Run unit tests only when the user explicitly asks for them. Inspect combined check commands before running them, and run non-unit checks separately if the combined command includes unrequested unit tests.
+
+Ensure checks exercise the staged or committed result being handed back or pushed, without relying on unrelated working-tree edits.
+
 For a new merge, switch to the target branch and use `git merge --no-commit <source>` with the established source ref. This leaves a non-fast-forward merge pending for checks. A fast-forward needs no new commit and advances the local target immediately, even with `--no-commit`. If checks then fail or you stop before pushing, report that the local target has already advanced. Do not substitute a squash or rebase unless requested.
 
 - If the source is already included in the target, report that no merge is needed. Do not create an empty commit or push unrelated local commits.
 - If the merge encounters no conflicts, run the relevant project checks before committing or pushing. If checks pass, create any needed merge commit and push the target branch. Skip the conflict-resolution and delegated-review sections below.
 - If the operation encounters any conflicts, follow the conflict path below. Leave the resolution staged and the operation unfinished, with no commit, continuation, or push. This rule still applies after every conflict is resolved. A general request to merge or finish an operation, or an answer to a resolution question, does not authorize completing this conflict path. Wait for a subsequent explicit instruction to commit, continue, or push.
 
-If no relevant automated checks exist, say so and continue. If expected checks fail or cannot run, report the failure or limitation and stop before committing or pushing. Respect branch protection and push rejections. Do not bypass repository requirements.
+If no relevant checks are available without running unrequested unit tests, say so and continue. If a selected check fails or cannot run, report the failure or limitation and stop before committing or pushing. Respect branch protection and push rejections. Do not bypass repository requirements.
 
 Before any push, inspect the outgoing commits. If the push would also publish unrelated local commits, show them and ask for authorization before pushing.
 
@@ -65,7 +69,7 @@ Delegate the review using the same provider, model, reasoning effort, and speed 
 Delegate one read-only reviewer, with no further delegation. Pass:
 
 - The repository, original commits and base, and the resolved index or completed result.
-- Both sides' intent, the user's decisions, and the checks performed.
+- Both sides' intent, the user's decisions, the checks performed, and the restriction on unrequested unit tests.
 - A request to find lost intent, incorrect resolutions, and incompatibilities between changes that merged cleanly.
 
 When the `worth-doing` skill is available, apply it in both review roles and pass its accessible path to the reviewer.
@@ -76,7 +80,9 @@ Allow at most one focused recheck for substantive fixes. If review cannot run, r
 
 ## Finish and report
 
-For the conflict path, hand back the staged resolution after checks and review. If the user subsequently authorizes completing it, verify the current state and address any outstanding checks or findings first. Perform only the actions that instruction authorizes. In a rebase or cherry-pick sequence, pause again after resolving any new conflicts.
+For the conflict path, hand back the staged resolution after checks and review. If the user subsequently authorizes completing it, verify the current state and address any outstanding checks or findings first. Perform only the actions that instruction authorizes.
+
+After continuing a rebase or cherry-pick, rerun the relevant checks on the completed result before pushing. Pause again after resolving any new conflicts.
 
 After a successful push, check the matching PR's actual state. GitHub can mark it merged when its head commits become reachable from its base through a normal merge or fast-forward. Report the observed state rather than assuming it closed. Do not rely on this detection after a local squash or rebase.
 

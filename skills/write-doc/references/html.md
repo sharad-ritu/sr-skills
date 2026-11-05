@@ -4,7 +4,7 @@
 
 Produce one HTML file with inline CSS. Embed diagrams as SVG and included raster images as data URLs. Use inline JavaScript only when an interaction needs it.
 
-Keep rendering independent of network requests, external libraries, fonts, and CDNs. External source links remain ordinary links.
+Keep rendering independent of network requests, external libraries, fonts, and CDNs. Make external links open in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
 
 Include the document language, UTF-8 charset, viewport metadata, and a meaningful page title. Use semantic headings, sections, lists, tables, and controls. Escape code and quoted material so it remains text.
 

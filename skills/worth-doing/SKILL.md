@@ -1,6 +1,6 @@
 ---
 name: worth-doing
-description: "Judge which recommendations are worth acting on. Use when the user says 'worth doing' or 'worth-doing', or when assessing review feedback."
+description: "Judge which recommendations are worth acting on. Use when the user says 'worth doing' or 'worth-doing', or when producing a review or assessing review feedback."
 ---
 
 # Worth doing

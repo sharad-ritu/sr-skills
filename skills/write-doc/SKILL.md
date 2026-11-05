@@ -48,6 +48,11 @@ Open with a short summary suited to the document's purpose, unless the template 
 
 Write about 80% of the way to ASD-STE100 Simplified Technical English: one instruction per sentence, short noun groups, and vertical lists for complex text. Review instructions over about 20 words, explanations over about 25 words, and paragraphs over four sentences. Use these limits as editing prompts and keep the phrasing natural.
 
+- Use one term for each concept or action throughout the document. Use actual code symbols and command names where relevant.
+- Make every pronoun refer to one clear thing. Repeat the noun when the reference could be ambiguous.
+- Put conditions before the instructions they govern.
+- Vary sentence length naturally. Keep a longer sentence when it expresses one clear thought.
+
 When a passage is hard to follow, try a table, diagram, image, or concrete example before adding more prose. Give informative visuals a caption or nearby explanation, and attribute sourced images.
 
 ## Save and verify
